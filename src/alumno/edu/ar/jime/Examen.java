@@ -1,5 +1,5 @@
 package alumno.edu.ar.jime;
 
-public class MiPrimerProj {
+public class Examen {
 
 }
