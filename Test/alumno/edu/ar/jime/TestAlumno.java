@@ -96,4 +96,94 @@ public class TestAlumno {
 		//validacion
 	assertEquals(valorEsperado,actual.toString());
 	}
+	@Test
+	public void queSiMeSaco7Y10YLasAsistenciasSonDe25HayaPromocionado(){
+	
+		//datos de entrada
+		final int NOTA_DE_PRIMER_PARCIAL=7;
+		final int NOTA_DE_SEGUNDO_PARCIAL=10;
+		final int ASISTENCIA=25;
+		Alumno actual;
+		
+		//ejecucion
+		actual =new Alumno();
+		actual.setNotaPrimerParcial(NOTA_DE_PRIMER_PARCIAL);
+		actual.setNotaSegundoParcial(NOTA_DE_SEGUNDO_PARCIAL);
+		actual.setCantidadAsistencias(ASISTENCIA);
+		//validacion
+		assertFalse(actual.desaprobo());
+		assertTrue(actual.aprobo());
+		assertTrue(actual.promociono());
+		
+  
+}
+	//------{----------------------------------------------}----------
+	
+	
+	@Test
+	public void queSeGenereUnaExcepcion(){
+		
+		//datos de entrada
+  Integer arrayDeEnteros[] =new Integer[100];
+  
+		
+		//ejecucion
+	System.out.println(arrayDeEnteros[100]);
+	
+	//si aca sucede una excepcion es un "error de ejecucion"
+	//un faller es un error en un hacer 
+		//validacion
+
+	}
+	
+	//------{----------------------------------------------}----------
+	
+	@Test
+	public void queAlInstanciarUnaPersonaLaEdadSea0Anios(){
+		
+		//datos de entrada
+    Persona actual;
+    final int EDAD_ESPERADA=0;
+		
+		//ejecucion
+	actual =new Persona();
+	
+	
+		//validacion
+	assertEquals(EDAD_ESPERADA,actual.getEdad());
+	}
+	
+	
+	@Test
+	public void queUnaPersonaDe12AñosEsMenorDeEdad(){
+		
+		//datos de entrada
+    Persona actual;
+    final int EDAD_ESPERADA=12;
+    
+		
+		//ejecucion
+	actual =new Persona();
+	actual.setEdad(EDAD_ESPERADA);
+	
+	
+		//validacion
+	assertEquals(EDAD_ESPERADA,actual.getEdad());
+	assertFalse(actual.esMayorDeEdad());
+	
+	}
+	
+	@Test
+	public void queAlInstanciarUnaPersonaEstaSeEncuentreViva(){
+		
+		//datos de entrada
+    Persona actual;
+
+		//ejecucion
+	actual =new Persona();
+	
+	
+		//validacion
+	assertTrue(actual.estaViva());
+	}
 }
